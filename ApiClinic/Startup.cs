@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -36,6 +37,8 @@ namespace ApiClinic
             services.AddSingleton<ICollection<Disease>, Collection<Disease>>();
             services.AddScoped<ClinicContext>();
             services.AddScoped<IRepository<Kind>, GenericRepository<Kind>>();
+            services.AddScoped<IRepository<Client>, GenericRepository<Client>>();
+            services.AddAutoMapper();
             services.AddMvc();
         }
 
@@ -47,7 +50,14 @@ namespace ApiClinic
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            app.UseStaticFiles();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Client}/{action=Index}/{id?}");
+            });
         }
     }
 }

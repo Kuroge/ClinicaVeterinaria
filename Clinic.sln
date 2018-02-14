@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelTest", "ModelTest\ModelTest.csproj", "{BDF92891-6930-4A2C-9672-8D1C1DA3E42A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiClinic", "ApiClinic\ApiClinic.csproj", "{20CBB8C0-6B52-45BA-BA75-29180B088991}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiClinic", "ApiClinic\ApiClinic.csproj", "{20CBB8C0-6B52-45BA-BA75-29180B088991}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +32,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {EF7D7C1F-C230-44FB-8CC2-37D5A46BAC53}
+		SolutionGuid = {F19990AC-76F6-45B0-90A9-EEBDFF0FFF84}
 	EndGlobalSection
 EndGlobal

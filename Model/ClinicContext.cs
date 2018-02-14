@@ -69,6 +69,11 @@ namespace Model
             {
                 return (ICollection<T>)diseases;
             }
+            if (typeof(T) == typeof(Client))
+            {
+                return (ICollection<T>)clients;
+            }
+
             throw new ArgumentException("El tipo no es valido");
         }
     }
