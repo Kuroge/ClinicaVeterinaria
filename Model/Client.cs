@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace Model
+﻿namespace Model
 {
     public class Client : Entity
     {
@@ -13,5 +8,6 @@ namespace Model
 
         public string Phone { get; set; }
 
+       
     }
 }

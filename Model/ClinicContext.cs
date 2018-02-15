@@ -32,6 +32,22 @@ namespace Model
             this.clients = clients;
             this.kinds = kinds;
             this.diseases = diseases;
+
+            if (this.kinds.Count == 0)
+            {
+                this.kinds.Add(new Kind() { Id = 1, Name = "Gato" });
+                this.kinds.Add(new Kind() { Id = 2, Name = "Perro" });
+                this.kinds.Add(new Kind() { Id = 3, Name = "Cobaya" });
+                this.kinds.Add(new Kind() { Id = 4, Name = "Rata" });
+            }
+
+            if (this.Clients.Count == 0)
+            {
+                this.Clients.Add(new Client() { Id = 1, FirstName = "Bob", LastName = "Shepard" , Phone = "987654321" });
+                this.Clients.Add(new Client() { Id = 2, FirstName = "Alice", LastName = "Doe",Phone = "987654321" });
+                this.Clients.Add(new Client() { Id = 3, FirstName = "Alice", LastName = "Shepard", Phone = "987654321" });
+                this.Clients.Add(new Client() { Id = 4, FirstName = "Bob", LastName = "Doe", Phone = "987654321" });
+            }
         }
 
 

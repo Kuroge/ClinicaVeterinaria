@@ -38,6 +38,7 @@ namespace ApiClinic
             services.AddScoped<ClinicContext>();
             services.AddScoped<IRepository<Kind>, GenericRepository<Kind>>();
             services.AddScoped<IRepository<Client>, GenericRepository<Client>>();
+            services.AddScoped<IRepository<Animal>, GenericRepository<Animal>>();
             services.AddAutoMapper();
             services.AddMvc();
         }

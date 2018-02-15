@@ -16,10 +16,13 @@ namespace ApiClinic.Controllers
         
         private IMapper _mapper;
         IRepository<Client> repository;
-        public ClientController(IRepository<Client> repository, IMapper mapper )
+        IRepository<Animal> repositoryAnimal;
+
+        public ClientController(IRepository<Client> repository, IRepository<Animal> repositoryAnimal, IMapper mapper )
         {
             this.repository = repository;
             this._mapper = mapper;
+            this.repositoryAnimal = repositoryAnimal;
         }
         // GET: Client
         public ActionResult Index()
@@ -56,8 +59,9 @@ namespace ApiClinic.Controllers
             {
                 return NotFound();
             }
-
-            return View(_mapper.Map<VMClient>(this.repository.GetById(id)));
+            VMClientAnimal clientDef = _mapper.Map<VMClientAnimal>(this.repository.GetById(id));
+            clientDef.Animals = this.repositoryAnimal.Get().Where(x => x.Owner.Id == id);
+            return View(clientDef);
         }
 
         // POST: Client/Edit/5
