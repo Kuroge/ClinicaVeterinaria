@@ -81,7 +81,10 @@ namespace ApiClinic.Controllers
             try
             {
                 // TODO: Add update logic here
-                this.repository.Update(_mapper.Map<Animal>(editAnimal));
+                Animal animalEdit = _mapper.Map<Animal>(editAnimal);
+                animalEdit.Owner = this.clientRepository.GetById(editAnimal.ClientId);
+                animalEdit.Species = this.kindRepository.GetById(editAnimal.SpecieId);
+                this.repository.Update(animalEdit);
                 return RedirectToAction(nameof(Index));
             }
             catch
